@@ -50,9 +50,9 @@ Each project is divided into multiple parts - also called **milestones**(on gith
 
 Task solving and submittion is a process that mostly relies on [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/). This method is commonly applied to any task that is being solved. Please make sure to go through the cheatsheet.
 
-:zap: don't solve many tasks in one feature branch. This may set the whole process on :fire: as some tasks way rely on other and many merges could be required
+> :zap: don't solve many tasks in one feature branch. This may set the whole process on :fire: as some tasks way rely on other and many merges could be required
 
-:zap: always create feature branches for your tasks
+> :zap: always create feature branches for your tasks
 
 **Commiting changes**
 
