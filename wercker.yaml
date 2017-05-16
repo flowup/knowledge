@@ -1,0 +1,37 @@
+build:
+  box: flowup/wercker-nodejs-karma
+  steps:
+    - script:
+      name: install dependencies
+      code: yarn
+    - script:
+      name: typescript lint
+      code: npm run lint
+    - script:
+      name: build
+      code: |
+        ng build
+
+deploy-s3:
+  box: flowup/wercker-nodejs-karma
+  steps:
+    - script:
+      name: Correct name of the base tag for s3
+      code: |
+        sed -i -e "s@href=\"\/\"@href=\"/$WERCKER_GIT_REPOSITORY/$WERCKER_GIT_BRANCH/\"@g" ./dist/index.html
+    - s3sync:
+      key-id: $AWS_KEY
+      key-secret: $AWS_SECRET
+      bucket-url: s3://flowup/$WERCKER_GIT_REPOSITORY/$WERCKER_GIT_BRANCH/
+
+deploy-s3-master-staging:
+  box: flowup/wercker-nodejs-karma
+  steps:
+    - script:
+      name: Correct name of the base tag for s3
+      code: |
+        sed -i -e "s@href=\"\/\"@href=\"\/my\"@g" ./dist/index.html
+    - s3sync:
+      key-id: $DASHLY_AWS_KEY
+      key-secret: $DASHLY_AWS_SECRET
+      bucket-url: s3://dashly-frontend
