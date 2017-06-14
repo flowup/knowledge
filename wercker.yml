@@ -5,6 +5,9 @@ build:
       name: install dependencies
       code: yarn
     - script:
+      name: scss lint
+      code: npm run stylelint
+    - script:
       name: typescript lint
       code: npm run lint
     - script:
