@@ -7,7 +7,7 @@ Contribution notes are rules that should be respected during contributions to ev
 
 > :robot: Please make sure to read the notes carefully
 
-> :sunny: Last Updated: 3. March 2017
+> :sunny: Last Updated: 14. June 2017
 
 ### Note organization
 
