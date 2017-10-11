@@ -138,15 +138,13 @@
       0,
       {
         "ignoreTypes": [
-          "/^app-/",
           "body",
           "/^\/deep\/$/",
           "g",
           "html",
           "line",
           "path",
-          "svg",
-          "text"
+          "svg"
         ]
       }
     ],
@@ -165,11 +163,8 @@
     "unit-whitelist": [
       "%",
       "deg",
-      "ms",
       "px",
-      "s",
-      "vh",
-      "vw"
+      "s"
     ],
     "value-keyword-case": "lower",
     "value-list-comma-newline-after": "never-multi-line",
