@@ -2,7 +2,7 @@
 Vytvoř komponentu obsahující miniaturu obrázku s popiskem.
 
 ## Vzhled a chování
-Měly by být víceméně evidentní z videa. Highlights:
+Měly by být víceméně evidentní z [videa](./intern-task-thumbnail-component.mkv). Highlights:
 - custom font v popisku
 - useknutí přetékajícího popisku a zakončení elipsou
 - mírná plynulá CCV rotace komponenty po najetí kurzorem
