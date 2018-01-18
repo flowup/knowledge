@@ -79,8 +79,8 @@
     "function-linear-gradient-no-nonstandard-direction": true,
     "function-name-case": "lower",
     "function-parentheses-newline-inside": "never-multi-line",
-    "function-parentheses-space-inside": "never",
     "function-url-no-scheme-relative": true,
+    "function-url-scheme-blacklist": ["ftp", "/^http/"],
     "function-url-quotes": [
       "always",
       {
