@@ -9,6 +9,8 @@
       "parameters",
       "statements"
     ],
+    "adjacent-overload-signatures": true,
+    "angular-whitespace": true,
     "array-type": [
       true,
       "array"
@@ -17,8 +19,18 @@
       true,
       "multiline"
     ],
+    "await-promise": true,
+    "ban-comma-operator": true,
     "ban-types": [
       true,
+      [
+        "Boolean",
+        "Please use `boolean` instead"
+      ],
+      [
+        "Number",
+        "Please use `number` instead"
+      ],
       [
         "Object",
         "Please use `{}` instead."
@@ -28,8 +40,11 @@
         "Please use `string` instead"
       ]
     ],
+    "banana-in-box": true,
+    "binary-expression-operand-order": true,
     "callable-types": true,
     "class-name": true,
+    "contextual-life-cycle": true,
     "comment-format": [
       true,
       "check-space"
@@ -38,26 +53,37 @@
     "component-selector": [
       true,
       "element",
-      "fu",
+      "prefix", // prefix
       "kebab-case"
     ],
     "curly": true,
+    "cyclomatic-complexity": [
+      true,
+      12
+    ],
+    "decorator-not-allowed": true,
+    "deprecation": true,
     "directive-class-suffix": true,
     "directive-selector": [
       true,
       "attribute",
-      "fu",
+      "prefix", // prefix
       "camelCase"
     ],
     "eofline": true,
+    "encoding": true,
     "forin": true,
+    "import-destructuring-spacing": true,
     "import-spacing": true,
     "indent": [
       true,
       "spaces"
     ],
     "interface-over-type-literal": true,
-    "invoke-injectable": true,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
     "label-position": true,
     "linebreak-style": [
       true,
@@ -77,10 +103,16 @@
       "static-before-instance",
       "variables-before-functions"
     ],
-    "no-access-missing-member": true,
+    "no-any": true,
     "no-arg": true,
+    "no-attribute-parameter-decorator": true,
     "no-bitwise": true,
+    "no-boolean-literal-compare": true,
     "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": [
+      true,
+      2
+    ],
     "no-console": [
       true,
       "debug",
@@ -92,26 +124,68 @@
     "no-construct": true,
     "no-debugger": true,
     "no-default-export": true,
+    "no-duplicate-imports": true,
+    "no-duplicate-super": true,
+    "no-duplicate-switch-case": true,
     "no-duplicate-variable": true,
+    "no-dynamic-delete": true,
     "no-empty": true,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [true, "ignore-params"],
-    "no-input-rename": true,
+    "no-for-in-array": true,
+    "no-implicit-dependencies": [
+      true,
+      "dev",
+      "optional"
+    ],
+    "no-import-side-effect": true,
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
+    "no-inferred-empty-object-type": true,
+    "no-internal-module": true,
     "no-invalid-this": true,
+    "no-invalid-template-strings": true,
+    "no-magic-numbers": [
+      true,
+      -1,
+      0,
+      1,
+      2,
+      10,
+      100,
+      1000
+    ],
     "no-misused-new": true,
-    "no-output-rename": true,
+    "no-namespace": true,
+    "no-object-literal-type-assertion": true,
+    "no-parameter-reassignment": false,
+    "no-reference": true,
+    "no-require-imports": true,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
+    "no-this-assignment": true,
     "no-trailing-whitespace": true,
+    "no-unnecessary-class": [
+      "allow-empty-class"
+    ],
     "no-unnecessary-initializer": true,
+    "no-unnecessary-type-assertion": true,
     "no-unsafe-finally": true,
     "no-unused-expression": true,
+    "no-unused-css": true,
     "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
+    "no-var-requires": true,
+    "number-literal-format": true,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
     "object-literal-sort-keys": false,
     "one-line": [
       true,
@@ -120,9 +194,25 @@
       "check-else",
       "check-whitespace"
     ],
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
+    "pipe-impure": true,
+    "pipe-naming": [
+      "camelCase",
+      "prefix" // prefix
+    ],
     "prefer-const": true,
     "prefer-for-of": true,
+    "prefer-readonly": true,
     "prefer-method-signature": true,
+    "prefer-object-spread": true,
+    "prefer-template": [
+      true,
+      "allow-single-concat"
+    ],
     "quotemark": [
       true,
       "single"
@@ -141,7 +231,7 @@
         "asyncArrow": "always"
       }
     ],
-    "templates-use-public": true,
+    "templates-no-negated-async": true,
     "triple-equals": [
       true,
       "allow-null-check",
@@ -162,15 +252,20 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "use-host-property-decorator": true,
     "use-input-property-decorator": true,
     "use-isnan": true,
     "use-life-cycle-interface": true,
     "use-output-property-decorator": true,
+    "use-pipe-decorator": true,
     "use-pipe-transform-interface": true,
-    "variable-name": [true, "ban-keywords", "check-format"],
+    "use-view-encapsulation": true,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format"
+    ],
     "whitespace": [
       true,
       "check-branch",
