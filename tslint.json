@@ -59,7 +59,7 @@
     "curly": true,
     "cyclomatic-complexity": [
       true,
-      12
+      10
     ],
     "decorator-not-allowed": true,
     "deprecation": true,
