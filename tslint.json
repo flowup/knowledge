@@ -159,7 +159,6 @@
     ],
     "no-misused-new": true,
     "no-namespace": true,
-    "no-object-literal-type-assertion": true,
     "no-parameter-reassignment": false,
     "no-reference": true,
     "no-require-imports": true,
