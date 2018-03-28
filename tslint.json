@@ -147,7 +147,6 @@
       true,
       "ignore-params"
     ],
-    "no-inferred-empty-object-type": true,
     "no-internal-module": true,
     "no-invalid-this": true,
     "no-invalid-template-strings": true,
