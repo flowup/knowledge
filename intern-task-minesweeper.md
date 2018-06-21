@@ -7,6 +7,14 @@ There are no restrictions of using libraries, however, consider avoiding usage o
 
 ![image](https://upload.wikimedia.org/wikipedia/en/3/31/Minesweeper_XP.png)
 
+## Game logic requirements
+
+- marking possible mines with a flag
+  - `+` using mouse right click for purpose of flag
+- empty fields evaluation
+- end game on explosion
+  - `+` show all the mines on field when game has ended
+
 ## Requirements
 - generate new project using angular cli ([quickstart](https://angular.io/guide/quickstart))
 - a simple UI that should allow users to generate new map and play it (start new game)
@@ -22,7 +30,7 @@ There are no restrictions of using libraries, however, consider avoiding usage o
 
 `+` Angular features
 
-`+` single-page
+`+` state management *(ngrx/redux/rxjs+service/...)*
 
 `+` nice UI
 
