@@ -1,0 +1,145 @@
+{
+	// Actions
+	"FlowUp light action": {
+		"scope": "typescript",
+		"prefix": "fula",
+		"body": [
+			"export class ${1:Name}Action implements Action {",
+			"\tstatic type: '${2:Type}' = '${2:Type}';",
+			"\ttype = ${1:Name}Action.type;",
+			"}",
+			"$0"
+		]
+	},
+	"FlowUp heavy action": {
+		"scope": "typescript",
+		"prefix": "fuha",
+		"body": [
+			"export class ${1:Name}Action implements Action {",
+			"\tstatic type: '${2:Type}' = '${2:Type}';",
+			"\ttype = ${1:Name}Action.type;",
+			"",
+			"\tconstructor(public readonly payload: ${3:PayloadType}) { }",
+			"}",
+			"$0"
+		]
+	},
+	"FlowUp async heavy action": {
+		"scope": "typescript",
+		"prefix": "fuaha",
+		"body": [
+			"export class ${1:Name}Action implements Action {",
+			"\tstatic type: '${1:Name}' = '${1:Name}';",
+			"\ttype = ${1:Name}Action.type;",
+			"",
+			"\tconstructor(public readonly payload: ${2:PayloadType}) { }",
+			"}",
+			"",
+			"export class ${1:Name}SuccessAction implements Action {",
+			"\tstatic type: '${1:Name}Success' = '${1:Name}Success';",
+			"\ttype = ${1:Name}SuccessAction.type;",
+			"",
+			"\tconstructor(public readonly payload: ${3:PayloadType}) { }",
+			"}",
+			"",
+			"export class ${1:Name}FailureAction implements Action {",
+			"\tstatic type: '${1:Name}Failure' = '${1:Name}Failure';",
+			"\ttype = ${1:Name}FailureAction.type;",
+			"",
+			"\tconstructor(public readonly payload: ${4:ErrorModel}) { }",
+			"}",
+			"",
+			"export type ${1:Name}Actions = ${1:Name}Action | ${1:Name}SuccessAction | ${1:Name}FailureAction;$0"
+		]
+	},
+	"FlowUp async light action": {
+		"scope": "typescript",
+		"prefix": "fuala",
+		"body": [
+			"export class ${1:Name}Action implements Action {",
+			"\tstatic type: '${1:Name}' = '${1:Name}';",
+			"\ttype = ${1:Name}Action.type;",
+			"}",
+			"",
+			"export class ${1:Name}SuccessAction implements Action {",
+			"\tstatic type: '${1:Name}Success' = '${1:Name}Success';",
+			"\ttype = ${1:Name}SuccessAction.type;",
+			"",
+			"\tconstructor(public readonly payload: ${3:PayloadType}) { }",
+			"}",
+			"",
+			"export class ${1:Name}FailureAction implements Action {",
+			"\tstatic type: '${1:Name}Failure' = '${1:Name}Failure';",
+			"\ttype = ${1:Name}FailureAction.type;",
+			"",
+			"\tconstructor(public readonly payload: ${4:ErrorModel}) { }",
+			"}",
+			"",
+			"export type ${1:Name}Actions = ${1:Name}Action | ${1:Name}SuccessAction | ${1:Name}FailureAction;$0"
+		]
+	},
+
+	// Reducers
+	"FlowUp reducer": {
+		"scope": "typescript",
+		"prefix": "fur",
+		"body": [
+			"export function ${TM_FILENAME/(?:^(\\w)(\\w+))(?:-(\\w)(\\w+))?(?:-(\\w)(\\w+))?(?:-(\\w)(\\w+))?(?:-(\\w)(\\w+))?(?:-(\\w)(\\w+))?(?:-(\\w)(\\w+))?.*/$1$2${3:/upcase}$4${5:/upcase}$6${7:/upcase}$8${9:/upcase}$10/}Reducer(state: $1 = initialState, action: $2): $1 {",
+			"\tswitch (action.type) {",
+			"\t\tcase $3.type:",
+			"\t\t\treturn {",
+			"\t\t\t\t$0"
+			"\t\t\t}",
+			"\t\tdefault:",
+			"\t\t\treturn state;",
+			"\t}",
+			"}"
+		]
+	},
+	"FlowUp reducer case": {
+		"scope": "typescript",
+		"prefix": "furc",
+		"body": [
+			"case $1.type:",
+			"\treturn {",
+			"\t\t$0",
+			"\t}"
+		]
+	},
+
+	// Effects
+	"FlowUp effect": {
+		"scope": "typescript",
+		"prefix": "fue",
+		"body": [
+			"@Effect() $1$ = this.${2:actions}$.pipe(",
+			"\tofType($3.type),",
+			"\t$0",
+			");"
+		]
+	},
+	"FlowUp switchMap effect": {
+		"scope": "typescript",
+		"prefix": "fues",
+		"body": [
+			"@Effect() $1$ = this.${2:actions}$.pipe(",
+			"\tofType($3.type),",
+			"\tswitchMap(({payload}: $3) => {",
+			"\t\t$0"
+			"\t})"
+			");"
+		]
+	},
+	"FlowUp mergeMap effect": {
+		"scope": "typescript",
+		"prefix": "fuem",
+		"body": [
+			"@Effect() $1$ = this.${2:actions}$.pipe(",
+			"\tofType($3.type),",
+			"\tmergeMap(({payload}: $3) => {",
+			"\t\t$0"
+			"\t})"
+			");"
+		]
+	},
+}
