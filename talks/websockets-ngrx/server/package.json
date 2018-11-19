@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "lorem-ipsum": "^1.0.5",
+    "websocket": "^1.0.26"
+  }
+}
