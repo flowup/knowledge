@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AppStateModel } from './app-state.model';
+import { AppStateModel } from './models/app-state.model';
 import { select, Store } from '@ngrx/store';
-import { $messages } from './message.reducer';
-import { SendMessageAction } from './message.actions';
+import { $messages } from './selectors/message.selectors';
+import { SendMessageAction } from './actions/message.actions';
 
 @Component({
   selector: 'app-root',

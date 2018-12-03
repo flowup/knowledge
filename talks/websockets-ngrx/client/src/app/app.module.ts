@@ -1,16 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ActionReducerMap, StoreModule } from '@ngrx/store';
-import { AppStateModel } from './app-state.model';
-import { messageReducer } from './message.reducer';
+import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { effects } from './message.effects';
-
-const reducers: ActionReducerMap<AppStateModel> = {
-  messages: messageReducer,
-};
+import { REDUCERS } from './reducers';
+import { EFFECTS } from './effects';
 
 @NgModule({
   declarations: [
@@ -18,9 +13,9 @@ const reducers: ActionReducerMap<AppStateModel> = {
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot(effects)
+    StoreModule.forRoot(REDUCERS),
+    EffectsModule.forRoot(EFFECTS),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]

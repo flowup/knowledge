@@ -1,16 +1,19 @@
 import { Action } from '@ngrx/store';
 
-export const SEND_MESSAGE = 'SEND_MESSAGE';
-export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
-
 export class SendMessageAction implements Action {
-  type = SEND_MESSAGE;
+  static readonly type = 'SendMessage';
+  readonly type = SendMessageAction.type;
+
   constructor(public readonly payload: string) { }
 }
 
 export class ReceiveMessageAction implements Action {
-  type = RECEIVE_MESSAGE;
+  static readonly type = 'ReceiveMessage';
+  readonly type = ReceiveMessageAction.type;
+
   constructor(public readonly payload: string) { }
 }
 
-export type MessageActions = SendMessageAction | ReceiveMessageAction;
+export type MessageActions
+  = SendMessageAction
+  | ReceiveMessageAction;

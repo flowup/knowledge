@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { ReceiveMessageAction, SEND_MESSAGE, SendMessageAction } from './message.actions';
+import { ReceiveMessageAction, SendMessageAction } from '../actions/message.actions';
 import { webSocket, WebSocketSubjectConfig } from 'rxjs/webSocket';
 import { map, tap } from 'rxjs/operators';
 
 const SOCKET_CONFIG: WebSocketSubjectConfig<string> = {
   url: 'ws://localhost:8080',
-  deserializer: message => message.data
+  deserializer: message => message.data,
+  serializer: message => String(message)
 };
 
 @Injectable()
-class MessageEffects {
-  socket = webSocket<string>(SOCKET_CONFIG);
+export class MessageEffects {
+  private readonly socket = webSocket<string>(SOCKET_CONFIG);
 
   @Effect({dispatch: false}) sendMessage$ = this.actions$.pipe(
-    ofType(SEND_MESSAGE),
+    ofType(SendMessageAction.type),
     tap((action: SendMessageAction) => {
       this.socket.next(action.payload);
     })
@@ -24,7 +25,5 @@ class MessageEffects {
     map(message => new ReceiveMessageAction(message))
   );
 
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions) { }
 }
-
-export const effects = [MessageEffects];
