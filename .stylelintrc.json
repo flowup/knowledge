@@ -4,11 +4,11 @@
       "always",
       {
         "except": [
-          "blockless-after-same-name-blockless",
           "first-nested"
         ],
         "ignore": [
-          "after-comment"
+          "after-comment",
+          "blockless-after-same-name-blockless"
         ]
       }
     ],
@@ -62,7 +62,11 @@
     "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-redundant-longhand-properties": [
       true,
-      "grid-template"
+      {
+        "ignoreShorthands": [
+          "grid-template"
+        ]
+      }
     ],
     "declaration-block-no-shorthand-property-overrides": true,
     "declaration-block-semicolon-newline-after": "always",
@@ -121,6 +125,9 @@
       {
         "except": [
           "first-nested"
+        ],
+        "ignore": [
+          "after-comment"
         ]
       }
     ],
@@ -170,7 +177,9 @@
       "s",
       "fr",
       "rem",
-      "em"
+      "em",
+      "vh",
+      "vw"
     ],
     "value-keyword-case": "lower",
     "value-list-comma-newline-after": "never-multi-line",
