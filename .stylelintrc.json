@@ -20,11 +20,13 @@
       "content",
       "else",
       "font-face",
+      "function",
       "if",
       "import",
       "include",
       "media",
-      "mixin"
+      "mixin",
+      "return"
     ],
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": [
