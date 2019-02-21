@@ -23,7 +23,8 @@
       "media",
       "mixin",
       "return",
-      "extend"
+      "extend",
+      "keyframes"
     ],
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": [
@@ -147,13 +148,18 @@
     "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "double",
-    "selector-pseudo-element-no-unknown": true,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": ["ng-deep"]
+      }
+    ],
     "selector-type-case": "lower",
     "string-no-newline": true,
     "string-quotes": "single",
     "unit-case": "lower",
     "unit-no-unknown": true,
-    "unit-whitelist": ["%", "deg", "px", "s", "fr", "rem", "em", "vh", "vw"],
+    "unit-whitelist": ["%", "deg", "px", "s", "fr", "rem", "em", "vh", "vw", "ms"],
     "value-keyword-case": "lower",
     "value-list-comma-newline-after": "never-multi-line",
     "value-list-comma-newline-before": "never-multi-line",
