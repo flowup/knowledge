@@ -3,13 +3,8 @@
     "at-rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment",
-          "blockless-after-same-name-blockless"
-        ]
+        "except": ["first-nested"],
+        "ignore": ["blockless-after-same-name-blockless", "after-comment"]
       }
     ],
     "at-rule-name-case": "lower",
@@ -19,6 +14,7 @@
     "at-rule-whitelist": [
       "content",
       "else",
+      "each",
       "font-face",
       "function",
       "if",
@@ -26,16 +22,14 @@
       "include",
       "media",
       "mixin",
-      "return"
+      "return",
+      "extend"
     ],
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": [
       "always",
       {
-        "ignoreAtRules": [
-          "if",
-          "else"
-        ]
+        "ignoreAtRules": ["if", "else"]
       }
     ],
     "block-closing-brace-newline-before": "always",
@@ -47,14 +41,10 @@
     "comment-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ]
+        "except": ["first-nested"]
       },
       {
-        "ignore": [
-          "stylelint-commands"
-        ]
+        "ignore": ["stylelint-commands"]
       }
     ],
     "comment-no-empty": true,
@@ -65,9 +55,7 @@
     "declaration-block-no-redundant-longhand-properties": [
       true,
       {
-        "ignoreShorthands": [
-          "grid-template"
-        ]
+        "ignoreShorthands": ["grid-template"]
       }
     ],
     "declaration-block-no-shorthand-property-overrides": true,
@@ -83,23 +71,20 @@
     "font-family-no-duplicate-names": true,
     "font-weight-notation": "numeric",
     "function-calc-no-unspaced-operator": true,
-    "function-comma-space-after": "always",
+    "function-comma-space-after": "always-single-line",
     "function-comma-space-before": "never",
     "function-linear-gradient-no-nonstandard-direction": true,
     "function-name-case": "lower",
-    "function-parentheses-newline-inside": "never-multi-line",
     "function-url-no-scheme-relative": true,
     "function-url-scheme-blacklist": ["ftp", "/^http/"],
     "function-url-quotes": [
       "always",
       {
-        "except": [
-          "empty"
-        ]
+        "except": ["empty"]
       }
     ],
     "function-whitespace-after": "always",
-    "indentation": 2,
+    "indentation": [2, { "ignore": ["param"] }],
     "length-zero-no-unit": true,
     "max-empty-lines": 1,
     "media-feature-colon-space-after": "always",
@@ -125,12 +110,8 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
       }
     ],
     "selector-attribute-brackets-space-inside": "never",
@@ -151,7 +132,7 @@
       {
         "ignoreTypes": [
           "body",
-          "/^\/deep\/$/",
+          "/^/deep/$/",
           "g",
           "html",
           "line",
@@ -172,17 +153,7 @@
     "string-quotes": "single",
     "unit-case": "lower",
     "unit-no-unknown": true,
-    "unit-whitelist": [
-      "%",
-      "deg",
-      "px",
-      "s",
-      "fr",
-      "rem",
-      "em",
-      "vh",
-      "vw"
-    ],
+    "unit-whitelist": ["%", "deg", "px", "s", "fr", "rem", "em", "vh", "vw"],
     "value-keyword-case": "lower",
     "value-list-comma-newline-after": "never-multi-line",
     "value-list-comma-newline-before": "never-multi-line",
