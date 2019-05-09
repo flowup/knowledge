@@ -1,101 +1,46 @@
 {
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
-  "extends": [
-    "tslint-immutable"
-  ],
+  "rulesDirectory": ["node_modules/codelyzer"],
+  "extends": ["tslint-immutable", "tslint-config-prettier"],
   "rules": {
-    "align": [
-      true,
-      "arguments",
-      "parameters",
-      "statements"
-    ],
+    "align": [true, "arguments", "parameters", "statements"],
     "adjacent-overload-signatures": true,
     "angular-whitespace": true,
-    "array-type": [
-      true,
-      "array"
-    ],
-    "arrow-return-shorthand": [
-      true,
-      "multiline"
-    ],
+    "array-type": [true, "array"],
+    "arrow-return-shorthand": [true, "multiline"],
     "await-promise": true,
     "ban-comma-operator": true,
     "ban-types": [
       true,
-      [
-        "Boolean",
-        "Please use `boolean` instead"
-      ],
-      [
-        "Number",
-        "Please use `number` instead"
-      ],
-      [
-        "Object",
-        "Please use `{}` instead."
-      ],
-      [
-        "String",
-        "Please use `string` instead"
-      ]
+      ["Boolean", "Please use `boolean` instead"],
+      ["Number", "Please use `number` instead"],
+      ["Object", "Please use `{}` instead."],
+      ["String", "Please use `string` instead"]
     ],
     "banana-in-box": true,
     "binary-expression-operand-order": true,
     "callable-types": true,
     "class-name": true,
     "contextual-life-cycle": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
+    "comment-format": [true, "check-space"],
     "component-class-suffix": true,
-    "component-selector": [
-      true,
-      "element",
-      "prefix", // prefix
-      "kebab-case"
-    ],
+    "component-selector": [true, "element", "prefix", "kebab-case"],
     "curly": true,
-    "cyclomatic-complexity": [
-      true,
-      10
-    ],
+    "cyclomatic-complexity": [true, 10],
     "decorator-not-allowed": true,
     "deprecation": true,
     "directive-class-suffix": true,
-    "directive-selector": [
-      true,
-      "attribute",
-      "prefix", // prefix
-      "camelCase"
-    ],
+    "directive-selector": [true, "attribute", "prefix", "camelCase"],
     "eofline": true,
     "encoding": true,
     "forin": true,
     "import-destructuring-spacing": true,
     "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
+    "indent": [true, "spaces"],
     "interface-over-type-literal": true,
-    "interface-name": [
-      true,
-      "never-prefix"
-    ],
+    "interface-name": [true, "never-prefix"],
     "label-position": true,
-    "linebreak-style": [
-      true,
-      "LF"
-    ],
-    "max-line-length": [
-      true,
-      140
-    ],
+    "linebreak-style": [true, "LF"],
+    "max-line-length": [true, 140],
     "member-access": false,
     "member-ordering": [
       true,
@@ -108,18 +53,8 @@
     "no-bitwise": true,
     "no-boolean-literal-compare": true,
     "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": [
-      true,
-      2
-    ],
-    "no-console": [
-      true,
-      "debug",
-      "log",
-      "time",
-      "timeEnd",
-      "trace"
-    ],
+    "no-consecutive-blank-lines": [true, 2],
+    "no-console": [true, "debug", "log", "time", "timeEnd", "trace"],
     "no-construct": true,
     "no-debugger": true,
     "no-default-export": true,
@@ -133,33 +68,22 @@
     "no-empty-interface": true,
     "no-eval": true,
     "no-for-in-array": true,
-    "no-implicit-dependencies": [
-      true,
-      "dev",
-      "optional"
-    ],
+    "no-implicit-dependencies": [true, "dev", "optional"],
     "no-import-side-effect": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [true, "ignore-params"],
     "no-internal-module": true,
     "no-invalid-this": true,
     "no-invalid-template-strings": true,
     "no-loop-statement": true,
-    "no-magic-numbers": [
-      true,
-      -1,
-      0,
-      1,
-      2,
-      10,
-      100,
-      1000
-    ],
+    "no-magic-numbers": [true, -1, 0, 1, 2, 10, 100, 1000],
     "no-misused-new": true,
     "no-namespace": true,
-    "no-object-mutation": [true, {"ignore-prefix": "this."}],
+    "no-object-mutation": [
+      true,
+      {
+        "ignore-prefix": "this."
+      }
+    ],
     "no-parameter-reassignment": false,
     "no-reference": true,
     "no-require-imports": true,
@@ -169,9 +93,7 @@
     "no-switch-case-fall-through": true,
     "no-this-assignment": true,
     "no-trailing-whitespace": true,
-    "no-unnecessary-class": [
-      "allow-empty-class"
-    ],
+    "no-unnecessary-class": ["allow-empty-class"],
     "no-unnecessary-initializer": true,
     "no-unnecessary-type-assertion": true,
     "no-unsafe-finally": true,
@@ -182,10 +104,7 @@
     "no-var-keyword": true,
     "no-var-requires": true,
     "number-literal-format": true,
-    "object-literal-key-quotes": [
-      true,
-      "as-needed"
-    ],
+    "object-literal-key-quotes": [true, "as-needed"],
     "object-literal-sort-keys": false,
     "one-line": [
       true,
@@ -200,29 +119,16 @@
       "allow-named-functions"
     ],
     "pipe-impure": true,
-    "pipe-naming": [
-      "camelCase",
-      "prefix" // prefix
-    ],
+    "pipe-naming": ["camelCase", "prefix"],
     "prefer-const": true,
     "prefer-for-of": true,
     "prefer-readonly": true,
     "prefer-method-signature": true,
     "prefer-object-spread": true,
-    "prefer-template": [
-      true,
-      "allow-single-concat"
-    ],
-    "quotemark": [
-      true,
-      "single"
-    ],
+    "prefer-template": [true, "allow-single-concat"],
+    "quotemark": [true, "single"],
     "radix": true,
-    "semicolon": [
-      true,
-      "always",
-      "ignore-bound-class-methods"
-    ],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
     "space-before-function-paren": [
       true,
       {
@@ -232,16 +138,8 @@
       }
     ],
     "templates-no-negated-async": true,
-    "triple-equals": [
-      true,
-      "allow-null-check",
-      "allow-undefined-check"
-    ],
-    "typedef": [
-      true,
-      "call-signature",
-      "parameter"
-    ],
+    "triple-equals": [true, "allow-null-check", "allow-undefined-check"],
+    "typedef": [true, "call-signature", "parameter"],
     "typedef-whitespace": [
       true,
       {
@@ -261,11 +159,7 @@
     "use-pipe-decorator": true,
     "use-pipe-transform-interface": true,
     "use-view-encapsulation": true,
-    "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format"
-    ],
+    "variable-name": [true, "ban-keywords", "check-format"],
     "whitespace": [
       true,
       "check-branch",
