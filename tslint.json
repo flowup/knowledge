@@ -36,22 +36,6 @@
     "label-position": true,
     "linebreak-style": [true, "LF"],
     "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "public-static-field",
-          "public-instance-field",
-          "private-static-field",
-          "private-instance-field",
-          "public-constructor",
-          "private-constructor",
-          "public-instance-method",
-          "protected-instance-method",
-          "private-instance-method"
-        ]
-      }
-    ],
     "no-any": true,
     "no-arg": true,
     "no-attribute-decorator": true,
@@ -103,8 +87,6 @@
     "no-unsafe-finally": true,
     "no-unused-expression": true,
     "no-unused-css": true,
-    "no-unused-variable": true,
-    "no-use-before-declare": true,
     "no-var-keyword": true,
     "no-var-requires": true,
     "number-literal-format": true,
