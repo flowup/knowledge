@@ -1,0 +1,7 @@
+.messages {
+  border: 1px solid #d0cdd7;
+  box-shadow: #d0cdd7 0 0 30px inset;
+  height: 50vh;
+  min-height: 200px;
+  overflow: auto;
+}
