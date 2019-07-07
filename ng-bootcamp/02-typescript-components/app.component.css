@@ -1,0 +1,13 @@
+.content {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* this demonstrates component CSS scope (see message.component.css) */
+.header {
+  margin: 30px 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #991e14;
+}

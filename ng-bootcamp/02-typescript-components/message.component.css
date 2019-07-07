@@ -1,0 +1,32 @@
+.message {
+  padding: 20px 25px;
+}
+
+/* this demonstrates component CSS scope (see app.component.css) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.author {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.time {
+  font-size: 12px;
+  color: #424342;
+}
+
+.text-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 20px;
+}
