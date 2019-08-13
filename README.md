@@ -1,6 +1,10 @@
 # Knowledge
 This repository exists because of knowledge that is shared **[here](https://github.com/flowup/knowledge/wiki)**
 
+[![Wiki page](https://user-images.githubusercontent.com/7274335/62960937-0da77f80-bdfc-11e9-8e57-ca97fd692e67.png)](https://github.com/flowup/knowledge/wiki)
+
+-----
+
 ## Contribution Notes
 
 Contribution notes are rules that should be respected during contributions to every project at FlowUp. These notes are mainly inspired by Angular and Golang contribution notes.
