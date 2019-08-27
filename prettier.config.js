@@ -12,7 +12,6 @@ module.exports = {
   rangeEnd: Infinity,
   requirePragma: false,
   insertPragma: false,
-  // parser: 'angular',
   proseWrap: 'preserve',
   htmlWhitespaceSensitivity: 'ignore',
   endOfLine: 'lf',
