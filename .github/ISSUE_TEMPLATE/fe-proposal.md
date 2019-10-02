@@ -27,5 +27,5 @@ assignees: ''
 
 ----
 
-# Links and References (
+# Links and References
 <!--- (OPTIONAL) delete if empty -->
