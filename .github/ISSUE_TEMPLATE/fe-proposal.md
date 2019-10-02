@@ -9,6 +9,7 @@ assignees: ''
 
 # Motivation
 <!--- Short description of the motivation -->
+<!--- What impact will it have on our current code style or setup -->
 
 # Proposal
 <!--- Actual implementation, lint rules, examples, ... -->
@@ -16,14 +17,15 @@ assignees: ''
 ----
 
 # Impact
-<!--- What impact will it have on our current code style or setup -->
+<!--- (OPTIONAL) delete if no pros or cons -->
 
 ## Pros
-<!--- Short bullet points -->
+<!--- (OPTIONAL) Short bullet points -->
 
 ## Cons
-<!--- Short bullet points -->
+<!--- (OPTIONAL) Short bullet points -->
 
 ----
 
-# Links and References
+# Links and References (
+<!--- (OPTIONAL) delete if empty -->
