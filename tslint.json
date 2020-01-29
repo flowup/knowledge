@@ -68,6 +68,7 @@
     "no-magic-numbers": [true, -1, 0, 1, 2, 10, 100, 1000],
     "no-misused-new": true,
     "no-namespace": true,
+    "no-non-null-assertion": true,
     "no-object-mutation": [
       true,
       {
