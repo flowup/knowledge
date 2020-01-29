@@ -42,6 +42,7 @@
     "no-bitwise": true,
     "no-boolean-literal-compare": true,
     "no-conditional-assignment": true,
+    "no-conflicting-lifecycle": true,
     "no-consecutive-blank-lines": [true, 2],
     "no-console": [true, "debug", "log", "time", "timeEnd", "trace"],
     "no-construct": true,
