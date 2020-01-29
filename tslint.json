@@ -65,6 +65,7 @@
     "no-internal-module": true,
     "no-invalid-this": true,
     "no-invalid-template-strings": true,
+    "no-lifecycle-call": true,
     "no-loop-statement": true,
     "no-magic-numbers": [true, -1, 0, 1, 2, 10, 100, 1000],
     "no-misused-new": true,
