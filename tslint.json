@@ -125,6 +125,7 @@
         "asyncArrow": "always"
       }
     ],
+    "template-accessibility-alt-text": true,
     "template-no-negated-async": true,
     "triple-equals": [true, "allow-null-check", "allow-undefined-check"],
     "typedef": [true, "call-signature", "parameter", "arrow-call-signature"],
