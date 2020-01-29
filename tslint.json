@@ -1,5 +1,5 @@
 {
-  "rulesDirectory": ["node_modules/codelyzer"],
+  "rulesDirectory": ["node_modules/codelyzer", "node_modules/rxjs-tslint"],
   "extends": ["tslint-immutable"],
   "rules": {
     "adjacent-overload-signatures": true,
@@ -112,6 +112,10 @@
     "prefer-object-spread": true,
     "prefer-template": [true, "allow-single-concat"],
     "radix": true,
+    "rxjs-collapse-imports": true,
+    "rxjs-pipeable-operators-only": true,
+    "rxjs-no-static-observable-methods": true,
+    "rxjs-proper-imports": true,
     "space-before-function-paren": [
       true,
       {
