@@ -30,7 +30,6 @@
     "encoding": true,
     "forin": true,
     "import-blacklist": [true, "rxjs/Rx", "rxjs/internal/operators"],
-    "import-destructuring-spacing": true,
     "interface-over-type-literal": true,
     "interface-name": [true, "never-prefix"],
     "label-position": true,
