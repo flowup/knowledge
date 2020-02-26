@@ -12,5 +12,5 @@ assignees: 'vmasek'
 
 
 # Take away
-<!--- Achivable takeway for the participants -->
-<!--- Whay should the participants learn from the workshop -->
+<!--- Achievable takeaway for the participants -->
+<!--- What should the participants learn from the workshop -->
