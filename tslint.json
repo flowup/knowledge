@@ -138,5 +138,8 @@
     "use-pipe-transform-interface": true,
     "use-component-view-encapsulation": true,
     "variable-name": [true, "ban-keywords", "check-format"]
+  },
+  "linterOptions": {
+    "exclude": ["e2e/**", "**/*.spec.ts"]
   }
 }
