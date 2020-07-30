@@ -1,0 +1,24 @@
+/** WARNING: Do NOT import this file in any component style */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* stylelint-disable-next-line selector-max-type */
+input,
+button {
+  border: none;
+  background: none;
+}
