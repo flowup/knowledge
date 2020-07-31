@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ES2015+ Workshop</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./vendor/remark.min.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        remark.create()
+      });
+    </script>
+  </head>
+  <body>
+    <div id="source">
+      class: center, middle
+
+      # ES2015+ features
+      ## běžně používané ve FlowUpu
+
+      ---
+
+      # ECMAScript/JavaScript/TypeScript
+
+      ## ECMAScript
+      - standardizovaná specifikace JavaScriptu (standard ECMA-262)
+      - edice:
+        1. ES1 (1997)
+        2. ES2 (1998)
+        3. ES3 (1999)
+        4. ES5 (2009)
+        5. ES5.1 (2011)
+        6. ES2015 (dříve a populárně/nekorektně ES6)
+        7. ES2016
+        8. ES2017
+        9. *ESNext*
+
+      ## TypeScript
+
+      - nadmnožina JS (rozšíření o statické typování) kompilovaná do JS vyvíjená Microsoftem
+
+      ---
+
+      # Lokální proměnné
+
+      ## `var`
+      - *function-scope* &dash; platnost od začátku do konce funkce **bez ohledu na pozici deklarace**
+      - **nepoužívat!**
+
+      ## `const` a `let` (ES2015+)
+      - *block-scope* &dash; platnost od deklarace do konce bloku
+      - `const` proměnná
+        - musí být inicializovaná při deklaraci
+        - nesmí být změněna její hodnota
+        - ...ale může být mutován objekt, reference na nějž je její hodnotou
+
+      ```javascript
+      const user = {name: 'Michael Scott'};
+      user.name = 'Jan Levinson'; // OK
+      user = {name: 'Jim Halpert'}; // TypeError: Assignment to constant variable
+      ```
+
+      ---
+
+      # Omezení mutace proměnných (1/3)
+
+      ## Podmíněné přiřazení
+
+      ```javascript
+      let personality;
+      if (glassHalfFull) {
+          personality = 'optimist';
+      } else {
+          personality = 'pessimist';
+      }
+      ```
+
+      .centered[.rotated[&raquo;]]
+
+
+      ```javascript
+      const personality = glassHalfFull ? 'optimist' : 'pessimist';
+      ```
+
+      ---
+
+      # Omezení mutace proměnných (2/3)
+
+      ## Sanitizace hodnoty
+
+      ```javascript
+      function factorial(x) {
+          x = Math.max(x, 0);
+          x = Math.floor(x);
+          return x > 0 ? x * factorial(x - 1) : 1;
+      }
+      ```
+
+      .centered[.rotated[&raquo;]]
+
+      ```javascript
+      function factorial(x) {
+          const nonNegativeX = Math.max(x, 0);
+          const naturalX = Math.floor(nonNegativeX);
+          return naturalX > 0 ? naturalX * factorial(naturalX - 1) : 1;
+      }
+      ```
+
+      ---
+
+      # Omezení mutace proměnných (3/3)
+
+      ## Agregace
+      ```javascript
+      const values = [6654, 1896, 6545, 1235, 7676];
+      let sum = 0;
+      for (const value of values) {
+          sum += value;
+      }
+      ```
+
+      .centered[.rotated[&raquo;]]
+
+      ```javascript
+      const values = [6654, 1896, 6545, 1235, 7676];
+      const sum = values.reduce((acc, value) => acc + value);
+      ```
+
+      ---
+
+      # Template-literály
+
+      - ohraničené zpětnými úvozovkami
+      - výrazy uzavřené v `${ }` se vyhodnotí, stringifikují a vloží do výsledného stringu
+      - můžou obsahovat fyzické odřádkování; **vloží ho do výsledného stringu**
+      - lze je vnořovat
+      - použitelné i pro stručný zápis typové konverze do stringu
+
+      ```javascript
+      const user = {firstName: 'Lee', lastName: 'Mack', email: 'jon@doe.io', phone: '123456789'};
+      const userName = user.firstName + ' ' + user.lastName;
+      const userSummary = userName + ', ' + (user.phone ? 'tel: ' + user.phone : user.email);
+
+      const screenWidth = String(window.innerWidth);
+      ```
+
+      .centered[.rotated[&asymp;]]
+
+      ```javascript
+      const user = {firstName: 'Lee', lastName: 'Mack', email: 'jon@doe.io', phone: '123456789'};
+      const userName = `${user.firstName} ${user.lastName}`;
+      const userSummary = `${userName}, ${user.phone ? `tel: ${user.phone}` : user.email}`;
+
+      const screenWidth = `${window.innerWidth}`;
+      ```
+
+      ---
+
+      # Generování klíčů v obj. literálech
+
+      ## Inference z identifikátorů
+
+      ```javascript
+      const firstName = 'Marcel', lastName = 'Čučoriedka';
+      const user = {firstName, lastName, age: 42};
+      // {firstName: 'Marcel', lastName: 'Čučoriedka', age: 42}
+      ```
+
+      ## Dynamická kalkulace
+
+      ```javascript
+      const key = 'foo', value = 'bar';
+      const withoutBrackets = {key: value}; // {key: 'bar'}
+      const withBrackets = {[key]: value}; // {foo: 'bar'}
+      ```
+
+      ---
+
+      # Array-spread
+
+      ## Příklad
+
+      ```javascript
+      const numbers = [1, 2, 3], letters = ['a', 'b', 'c'];
+      const b = [...numbers, true, ...letters, false];
+      // [1, 2, 3, true, 'a', 'b', 'c', false]
+      ```
+
+      ## Využití
+
+      ```javascript
+      const result = [...array1, ...array2, ...array3]; // konkatenace
+      let stack = []; stack = [...stack, someValue]; // "imutabilní push"
+      const copy = [...original]; // kopie
+      ```
+
+      ---
+
+      # Object-spread *(ESNext)*
+
+      ## Příklad
+
+      ```javascript
+      const size = {width: '20px', height: '40px'};
+      const color = {red: 63, green: 127, blue: 255};
+      const colorPatch = {green: 31, blue: 191};
+      const shape = {...color, ...size, blue: 0, ...colorPatch, height: '60px'};
+      // {width: '20px', height: '60px', red: 63, green: 31, blue: 191}
+      ```
+
+      ## Využití
+
+      ```javascript
+      const maleAges = {evzen: 25, alfonz: 54}, femaleAges = {yolanda: 32};
+      let allAges = {...maleAges, ...femaleAges}; // sjednocení
+      allAges = {...allAges, herbert: 31}; // "create"
+      allAges = {...allAges, evzen: 26} // "update"
+      allAges = {evzen: 27, ...allAges}; // "create" podmíněný neexistencí
+      allAges = {...allAges, ...includeGertruda && {gertruda: 58}}; // "create" podmíněný výrazem
+      ```
+
+      ---
+
+
+      # Argument-spread
+
+      ## Příklad
+
+      ```javascript
+      const someValues = [1, 8, 4, 5, 2];
+      const maximum = Math.max(...someValues); // &asymp; Math.max(1, 8, 4, 5, 2);
+      ```
+
+      ---
+
+      # Parametry
+
+      ## Implicitní hodnoty parametrů
+
+      ```javascript
+      function toPercent(value, sign = '%') {
+          return `${value * 100}${sign}`;
+      }
+      ```
+
+      ## Rest-parametry
+
+
+      ```javascript
+      function pickRandom(randomSign, ...numbers) {
+          const sign = randomSign ? Math.sign(Math.random() - 0.5) : 1;
+          const index = Math.floor(Math.random() * numbers.length);
+          return sign * numbers[index];
+      }
+
+      const random = pickRandom(true, 2, 3, 5); // random &isin; {-5, -3, -2, 2, 3, 5}
+      ```
+
+      ---
+
+      # Destrukturace polí
+
+      ## Do proměnných
+
+      ```javascript
+      const places = 'Alice > Bob > Claudia > David > Elizabeth';
+      const [gold, silver, bronze, ...noOneCares] = places.split(' > ');
+
+      const [safety = 42, is = 34, everything = 0] = arrayOrNull || [];
+
+      ```
+
+      ## Do parametrů
+
+      ```javascript
+      function magnitude([x, y]) {
+        return (x ** 2 + y ** 2) ** 0.5;
+      }
+
+      const vector = [3, 4];
+      const vectorMagnitude = magnitude(v); // 5
+      ```
+
+      ---
+
+      # Destrukturace objektů
+
+      ```javascript
+      const myObject = {hello: 'world', foo: 'bar', flow: 'up', java: 'script'};
+      const {hello, yolo, foo = 'bang', yin = 'yang'} = myObject;
+      // console.log(hello, yolo, foo, yin); --> world undefined bar yang
+      ```
+
+      ## Využití
+      - nižší verbozita kódu (užitečné hlavně v delších výrazech)
+      - simulace pojmenovaných nepozičních argumentů *a la Python*
+
+      ```javascript
+      function someFunc(pos1, pos2, {named1, named2, named3} = {}) { }
+      someFunc('foo', 42, {named3: 34, named1: 'foo'});
+      ```
+
+      - "imutabilní `delete`"
+
+      ```javascript
+      const bandAlbums = {slipknot: 5, nirvana: 3, billyTalent: 5};
+      const {nirvana, ...activeBandAlbums} = bandAlbums;
+      ```
+
+      ---
+
+      # Arrow funkce
+
+      - zkrácený zápis *funkčních výrazů (function expressions)* s lexikální vazbou na `this`
+      - tělem je blok nebo výraz
+
+      ```javascript
+      const cylinderVolume = function(radius, height) {
+          const baseArea = Math.PI * radius ** 2;
+          return baseArea * height;
+      }
+      ```
+
+      .centered[.rotated[&asymp;]]
+
+      ```javascript
+      const cylinderVolume = (radius, height) => {
+          const baseArea = Math.PI * radius ** 2;
+          return baseArea * height;
+      }
+      ```
+
+      .centered[.rotated[&asymp;]]
+
+      ```javascript
+      const cylinderVolume = (radius, height) => Math.PI * radius ** 2 * height;
+      ```
+
+      ---
+
+      # Lexikální vazba `=>` na `this`
+
+      - `this` uvnitř arrow funkce odpovídá `this` ve vnějším lexikálním kontextu
+
+      ```javascript
+      const outer = {
+          name: 'Outer object',
+          test: function() {
+              const inner = {
+                  name: 'Inner object',
+                  printThisNormal: function() {
+                      console.log(`normal: ${this.name}`);
+                  },
+                  printThisArrow: () => {
+                      console.log(`arrow: ${this.name}`);
+                  }
+              };
+              inner.printThisNormal();
+              inner.printThisArrow();
+          }
+      };
+
+      outer.test(); // normal: Inner object
+                    // arrow: Outer object
+      ```
+
+      ---
+
+      # Díky za pozornost!
+
+      ## It's-a-me, Mario!
+      - pavel.tobias@flowup.cz
+      - **@pavel** na Slacku
+
+      ## Zdroje:
+      - MDN Web Docs (https://developer.mozilla.org)
+      - ECMAScript 6: New Features: Overview and Comparison (http://es6-features.org)
+      - naše codebase a zkušenosti ;-)
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed|VT323&subset=latin-ext');
+
+body {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  color: #d7dde5;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+.remark-slide-content {
+  background-color: #4a586d;
+}
+
+.remark-code, .remark-inline-code {
+  font-family: 'VT323', monospace;
+  background-color: #697b93;
+}
+
+.remark-inline-code {
+  padding: 0 2px;
+}
+
+.remark-code {
+  display: block;
+  padding: 5px 8px;
+  font-size: 20px;
+}
+
+.remark-code-line:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.centered {
+  display: block;
+  text-align: center;
+  margin: -20px 0;
+}
+
+.rotated {
+  display: inline-block;
+  font-size: 40px;
+  transform: rotate(90deg);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+a {
+  color: inherit;
+}
