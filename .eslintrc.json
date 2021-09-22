@@ -61,7 +61,24 @@
         ],
         "functional/no-let": ["error", { "allowLocalMutation": true }],
         "functional/no-loop-statement": "error",
-        "rxjs/finnish": "error",
+        "rxjs/finnish": [
+          "error",
+          {
+            "functions": true,
+            "methods": true,
+            "names": {
+                "^(canActivate|canActivateChild|canDeactivate|canLoad|intercept|resolve|validate)$": false
+            },
+            "parameters": true,
+            "properties": true,
+            "strict": false,
+            "types": {
+              "^EventEmitter$": false,
+              "^Store$": false
+            },
+            "variables": true
+          }
+        ],
         "rxjs/no-exposed-subjects": "error",
         "rxjs/no-internal": "error",
         "rxjs/no-nested-subscribe": "error",
@@ -175,7 +192,7 @@
         "@angular-eslint/relative-url-prefix": "error",
         "@angular-eslint/use-component-selector": "error",
         "@angular-eslint/use-component-view-encapsulation": "error",
-        "@angular-eslint/use-injectable-provided-in": "error",
+        "@angular-eslint/use-injectable-provided-in": "warn",
         "@angular-eslint/use-lifecycle-interface": "error",
         "@angular-eslint/use-pipe-transform-interface": "error"
       }
